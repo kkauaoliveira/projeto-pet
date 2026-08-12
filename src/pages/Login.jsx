@@ -3,9 +3,11 @@ import { Input } from '../components/Input';
 import { Button } from '../components/Button';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 export function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [erro, setErro] = useState('');
@@ -17,7 +19,7 @@ export function Login() {
     setCarregando(true);
 
     try {
-      const resposta = await fetch('http://localhost:3000/login', {
+      const resposta = await fetch('http://localhost:3001/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, senha })
@@ -26,8 +28,8 @@ export function Login() {
       const dados = await resposta.json();
 
       if (resposta.ok) {
-        localStorage.setItem('token', dados.token);
-        alert('Login realizado com sucesso!');
+        localStorage.setItem('userId', dados.usuario.id);
+        navigate('/perfil'); 
       } else {
         setErro(dados.mensagem || 'E-mail ou senha inválidos.');
       }

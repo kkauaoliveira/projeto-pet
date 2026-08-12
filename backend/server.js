@@ -19,7 +19,7 @@ const pool = new Pool({
   user: 'postgres',          // Seu usuário do PostgreSQL
   host: 'localhost',         // Endereço do banco (computador local)
   database: 'db_saude',      // Nome do banco de dados onde você rodou o SQL 
-  password: 'kaua221205',   // Substitua pela sua senha do PostgreSQL local
+  password: '123',   // Substitua pela sua senha do PostgreSQL local
   port: 5432,                // Porta padrão do PostgreSQL
 });
 
@@ -156,9 +156,32 @@ app.get('/api/funcoes', async (req, res) => {
 });
 
 // ==============================================================================
+// ROTA DE BUSCA DE PERFIL (BUSCA SEGURA POR ID)
+// ==============================================================================
+app.get('/api/usuarios/:id', async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    // Trazemos apenas os dados públicos, NUNCA a senha ou o salto
+    const query = 'SELECT id, nome, email, telefone, ubs_id, funcao_id FROM tab_usuario WHERE id = $1';
+    const busca = await pool.query(query, [id]);
+
+    if (busca.rows.length === 0) {
+      return res.status(404).json({ erro: "Usuário não encontrado." });
+    }
+
+    res.json(busca.rows[0]);
+  } catch (erro) {
+    console.error(erro);
+    res.status(500).json({ erro: "Erro ao buscar dados do perfil." });
+  }
+});
+
+// ==============================================================================
 // INICIALIZAÇÃO DO SERVIDOR
 // ==============================================================================
 const PORTA = 3001;
 app.listen(PORTA, () => {
   console.log(`🚀 Servidor rodando com sucesso em http://localhost:${PORTA}`);
 });
+

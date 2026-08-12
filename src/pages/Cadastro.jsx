@@ -36,17 +36,15 @@ export function Cadastro() {
     setCarregando(true);
 
     try {
-      await cadastrarUsuario({
+await cadastrarUsuario({
         nome,
-        cpf,
         telefone,
-        endereco,
         email,
         senha,
-        ubsId,
-        funcaoId,
+        ubs_id: ubsId,       // Convertendo o nome da variável para o backend
+        funcao_id: funcaoId, // Convertendo o nome da variável para o backend
       });
-
+      
       setSucesso('Cadastro realizado com sucesso! Redirecionando para o login...');
       setTimeout(() => navigate('/'), 1500);
     } catch (err) {

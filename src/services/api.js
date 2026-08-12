@@ -10,7 +10,7 @@
 // (http://localhost:3000). Ajuste conforme a documentação real da API
 // assim que o backend estiver definido.
 
-const API_BASE_URL = 'http://localhost:3000';
+const API_BASE_URL = 'http://localhost:3001/api';
 
 /**
  * Recupera o token salvo no login (ver Login.jsx: localStorage.setItem('token', ...))
@@ -87,12 +87,19 @@ export function criarFuncao(dadosFuncao) {
 
 /** POST /cadastro -> cria um novo usuário */
 export function cadastrarUsuario(dadosUsuario) {
-  return apiFetch('/cadastro', { method: 'POST', body: dadosUsuario });
+  return apiFetch('/usuarios', { method: 'POST', body: dadosUsuario });
 }
-
 /** GET /usuarios/me -> retorna os dados do usuário logado (usa o token) */
+/** GET /usuarios/:id -> retorna os dados do usuário logado baseado no ID salvo */
 export function buscarPerfil() {
-  return apiFetch('/usuarios/me', { auth: true });
+  const id = localStorage.getItem('userId');
+  
+  if (!id) {
+    throw new Error('Usuário não autenticado.');
+  }
+
+  // Removemos o { auth: true } porque o backend do colega não implementou validação de Token (JWT)
+  return apiFetch(`/usuarios/${id}`); 
 }
 
 /** PUT /usuarios/:id -> atualiza dados do usuário (ex: telefone, UBS, função) */
