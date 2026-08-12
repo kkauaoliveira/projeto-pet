@@ -18,8 +18,8 @@ app.use(cors());
 const pool = new Pool({
   user: 'postgres',          // Seu usuário do PostgreSQL
   host: 'localhost',         // Endereço do banco (computador local)
-  database: 'db_saude',      // Nome do banco de dados onde você rodou o SQL do professor
-  password: 'kaua221205',   // Substitua pela sua senha do PostgreSQL
+  database: 'db_saude',      // Nome do banco de dados onde você rodou o SQL 
+  password: 'kaua221205',   // Substitua pela sua senha do PostgreSQL local
   port: 5432,                // Porta padrão do PostgreSQL
 });
 
