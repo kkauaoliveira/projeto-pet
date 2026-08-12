@@ -1,0 +1,53 @@
+.painel-opcao {
+  text-align: left;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--cor-borda);
+}
+
+.painel-opcao h3 {
+  color: var(--cor-primaria);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.painel-opcao-form {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.painel-opcao-form .input-group {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.painel-opcao-form .btn {
+  width: auto;
+  white-space: nowrap;
+  margin-top: 0;
+  padding: 0.8rem 1.2rem;
+}
+
+.painel-opcao-lista {
+  list-style: none;
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.painel-opcao-lista li {
+  background-color: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
+  border-radius: 20px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  color: var(--cor-texto);
+}
+
+.painel-opcao-vazio {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #7a8a99;
+}

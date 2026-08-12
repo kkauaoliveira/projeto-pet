@@ -1,0 +1,101 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* Fundo mais moderno com gradiente suave */
+  background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+  padding: 1rem;
+}
+
+.login-logo {
+  height: 60px;
+  margin-bottom: 1.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-card {
+  background-color: #ffffff;
+  padding: 3rem 2.5rem;
+  border-radius: 16px;
+  /* Sombra mais suave e elegante */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  position: relative;
+}
+
+/* Estilo do Logo Fake */
+.logo-placeholder {
+  width: 60px;
+  height: 60px;
+  background-color: var(--cor-primaria);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 auto 1.5rem auto;
+  box-shadow: 0 4px 10px rgba(0, 86, 156, 0.3);
+}
+
+.login-card h2 {
+  color: var(--cor-primaria);
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.subtitulo {
+  color: #627d98;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.mensagem-erro {
+  display: block;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--cor-erro);
+  background-color: #ffebee;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.mensagem-sucesso {
+  display: block;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--cor-secundaria);
+  background-color: #e3f5e9;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+/* Novo link de cadastro que vai para a parte 2 do projeto */
+.cadastro-link {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #486581;
+}
+
+.cadastro-link a {
+  color: var(--cor-primaria);
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.cadastro-link a:hover {
+  color: var(--cor-secundaria); /* Fica verde ao passar o mouse */
+  text-decoration: underline;
+}

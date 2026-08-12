@@ -1,0 +1,22 @@
+:root {
+  /* Paleta de Cores Institucional (SUS / Ministério da Saúde) */
+  --cor-primaria: #00569C; /* Azul SUS */
+  --cor-secundaria: #008A44; /* Verde SUS */
+  --cor-destaque: #FFC900; /* Amarelo */
+  --cor-fundo: #F4F7F9;
+  --cor-texto: #333333;
+  --cor-erro: #D32F2F;
+  --cor-borda: #CCCCCC;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Roboto', sans-serif;
+}
+
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+}
