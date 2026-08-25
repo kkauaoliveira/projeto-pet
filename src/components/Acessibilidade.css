@@ -1,0 +1,65 @@
+/* Posicionamento flutuante no canto da tela */
+.acessibilidade-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.acessibilidade-btn-principal {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.acessibilidade-btn-principal:hover {
+  transform: scale(1.1);
+}
+
+/* Menu de opções */
+.acessibilidade-menu {
+  background: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.acessibilidade-menu button {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+}
+
+.acessibilidade-menu button:hover {
+  background-color: #e2e6ea;
+}
+
+/* Estilo global aplicado ao body quando o alto contraste está ativado */
+body.alto-contraste {
+  background-color: #121212 !important;
+  color: #ffffff !important;
+}
+
+body.alto-contraste * {
+  background-color: #121212 !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
