@@ -5,6 +5,7 @@ import { EditarPerfil } from './pages/EditarPerfil';
 import { GerenciarOpcoes } from './pages/GerenciarOpcoes';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
+import { Acessibilidade } from './components/Acessibilidade';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/perfil" element={<EditarPerfil />} />
           <Route path="/opcoes" element={<GerenciarOpcoes />} />
         </Routes>
+        <Acessibilidade />
       </div>
 
       <Footer />
