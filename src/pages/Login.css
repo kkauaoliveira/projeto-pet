@@ -1,3 +1,4 @@
+/* --- ESTILOS BASE (Padrão para telas médias/notebooks) --- */
 .login-container {
   display: flex;
   justify-content: center;
@@ -99,3 +100,44 @@
   color: var(--cor-secundaria); /* Fica verde ao passar o mouse */
   text-decoration: underline;
 }
+
+/* ==========================================
+   RESPONSIVIDADE PARA TODAS AS TELAS
+========================================== */
+
+/* 1. Celulares Pequenos (até 480px) */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 2rem 1.5rem; /* Reduz bastante o preenchimento para aproveitar a tela pequena */
+  }
+
+  .login-card h2 {
+    font-size: 1.5rem; /* Título menorzinho */
+  }
+
+  .subtitulo {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .login-logo,
+  .logo-placeholder {
+    height: 50px;
+    width: 50px; /* Logo fake acompanha a proporção */
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* 2. Celulares Maiores e Tablets em pé (de 481px até 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .login-card {
+    padding: 2.5rem 2rem;
+  }
+
+  .login-card h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Telas maiores (computadores) usarão o Estilo Base perfeitamente! */

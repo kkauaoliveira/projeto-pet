@@ -1,3 +1,4 @@
+/* --- ESTILOS BASE (Padrão para telas médias/notebooks) --- */
 .painel-opcao {
   text-align: left;
   margin-top: 2rem;
@@ -50,4 +51,26 @@
   margin-top: 1rem;
   font-size: 0.85rem;
   color: #7a8a99;
+}
+
+/* ==========================================
+   RESPONSIVIDADE PARA TODAS AS TELAS
+========================================== */
+
+/* Celulares e Tablets (até 768px) */
+@media (max-width: 768px) {
+  .painel-opcao-form {
+    flex-direction: column; /* Transforma o lado a lado em um empilhado */
+    align-items: stretch; /* Faz os elementos esticarem até as bordas */
+    gap: 1rem; /* Aumenta o espaço entre o input e o botão */
+  }
+
+  .painel-opcao-form .input-group {
+    width: 100%;
+  }
+
+  .painel-opcao-form .btn {
+    width: 100%; /* O botão agora ocupa a tela toda */
+    padding: 1rem; /* Deixa o botão mais gordinho para o toque no celular */
+  }
 }

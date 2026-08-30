@@ -1,3 +1,4 @@
+/* --- ESTILOS BASE (Padrão para telas médias/notebooks) --- */
 .input-group {
   display: flex;
   flex-direction: column;
@@ -16,7 +17,7 @@
   padding: 0.8rem;
   border: 1px solid var(--cor-borda);
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 1rem; /* Importante: manter no mínimo 1rem para evitar zoom no iOS */
   transition: all 0.3s ease;
   outline: none;
   background-color: #FAFAFA;
@@ -32,4 +33,38 @@
   background-color: #EDEFF1;
   color: #7a8a99;
   cursor: not-allowed;
+}
+
+/* ==========================================
+   RESPONSIVIDADE PARA TODAS AS TELAS
+========================================== */
+
+/* 1. Celulares Pequenos (até 480px) */
+@media (max-width: 480px) {
+  .design-system-input {
+    padding: 1rem; /* Aumenta a área de toque para facilitar digitar no celular */
+  }
+
+  .input-group label {
+    font-size: 0.95rem; /* Deixa o título do campo um pouquinho maior para leitura */
+    margin-bottom: 0.4rem;
+  }
+}
+
+/* 2. Celulares Maiores e Tablets em pé (de 481px até 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .design-system-input {
+    padding: 0.9rem; /* Meio termo */
+  }
+}
+
+/* 3. Telas Gigantes / Monitores Ultrawide (acima de 1200px) */
+@media (min-width: 1200px) {
+  .input-group {
+    margin-bottom: 1.5rem; /* Dá um respiro maior entre os campos em telas grandes */
+  }
+
+  .design-system-input {
+    padding: 0.75rem; /* Fica um pouco mais fino, já que o usuário está no mouse/teclado */
+  }
 }

@@ -1,3 +1,4 @@
+/* --- ESTILOS BASE (Padrão para telas médias/notebooks) --- */
 .design-system-select {
   appearance: none;
   -webkit-appearance: none;
@@ -8,15 +9,70 @@
   /* Seta customizada em SVG, usando a cor primária do sistema */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2300569C' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 0.9rem center;
-  padding-right: 2.5rem;
+  background-position: right 0.9rem center; /* Posição original da setinha */
+  padding-right: 2.5rem; /* Espaço para o texto não encostar na setinha */
+  
+  /* Para garantir que ele tenha a mesma base visual do Input caso falte alguma propriedade */
+  width: 100%;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  padding-left: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.design-system-select:focus {
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px rgba(0, 86, 156, 0.15);
+  background-color: #FFFFFF;
 }
 
 .design-system-select:disabled {
   cursor: not-allowed;
   opacity: 0.7;
+  background-color: #EDEFF1;
 }
 
 .design-system-select:invalid {
   color: #7a8a99;
+}
+
+/* ==========================================
+   RESPONSIVIDADE PARA TODAS AS TELAS
+========================================== */
+
+/* 1. Celulares Pequenos (até 480px) */
+@media (max-width: 480px) {
+  .design-system-select {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 3rem; /* Dá mais espaço pra setinha não esbarrar no texto longo */
+    background-position: right 1rem center; /* Afasta a setinha um pouco mais da borda */
+  }
+}
+
+/* 2. Celulares Maiores e Tablets em pé (de 481px até 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .design-system-select {
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+    padding-left: 0.9rem;
+    padding-right: 2.8rem;
+    background-position: right 0.9rem center;
+  }
+}
+
+/* 3. Telas Gigantes / Monitores Ultrawide (acima de 1200px) */
+@media (min-width: 1200px) {
+  .design-system-select {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 0.75rem;
+    padding-right: 2.2rem;
+    background-position: right 0.75rem center;
+  }
 }

@@ -1,3 +1,4 @@
+/* --- ESTILOS BASE (Padrão para telas médias/notebooks) --- */
 .btn {
   width: 100%;
   padding: 0.8rem;
@@ -40,4 +41,39 @@
   background-color: #cccccc;
   cursor: not-allowed;
   opacity: 0.7;
+}
+
+/* ==========================================
+   RESPONSIVIDADE PARA TODAS AS TELAS
+========================================== */
+
+/* 1. Celulares Pequenos (até 480px) */
+@media (max-width: 480px) {
+  .btn {
+    padding: 1rem; /* Área de toque bem maior para os dedos */
+    font-size: 1.05rem; 
+  }
+}
+
+/* 2. Celulares Maiores e Tablets em pé (de 481px até 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .btn {
+    padding: 0.9rem; /* Meio termo entre celular e computador */
+    font-size: 1rem;
+  }
+}
+
+/* 3. Telas Gigantes / Monitores Ultrawide (acima de 1200px) */
+@media (min-width: 1200px) {
+  .btn {
+    padding: 0.75rem; /* Menos padding pois o usuário usa o mouse com precisão */
+    font-size: 0.95rem;
+    
+    /* Dica: Em telas gigantes, botões 100% podem ficar esquisitos se o container for muito largo.
+       Caso queira limitar a largura do botão apenas nessas telas gigantes, tire o comentário das linhas abaixo: */
+    
+    /* max-width: 500px; */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+  }
 }

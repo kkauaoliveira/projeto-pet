@@ -42,7 +42,7 @@
   flex-wrap: wrap;
   gap: 12px;
   width: 100%;
-  max-width: 480px; /* Largura ideal e bem visível em telas grandes */
+  max-width: 480px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   animation: fadeIn 0.2s ease-in-out;
 }
@@ -63,7 +63,7 @@
   color: #222222;
   font-size: 17px;
   transition: all 0.2s;
-  flex: 1 1 40%; /* Garante boa distribuição dos botões em blocos */
+  flex: 1 1 40%;
   text-align: center;
 }
 
@@ -129,25 +129,25 @@ body.alto-contraste select {
   border: 2px solid #ffff00 !important;
 }
 
-/* =========================================================
-   ADAPTAÇÃO AUTOMÁTICA PARA DISPOSITIVOS MÓVEIS (CELULARES)
-   ========================================================= */
-@media (max-width: 600px) {
+/* ==========================================
+   RESPONSIVIDADE PARA TODAS AS TELAS
+========================================== */
+
+/* 1. Celulares Pequenos (até 480px) */
+@media (max-width: 480px) {
   .acessibilidade-container {
-    bottom: 20px;
+    bottom: 15px;
     right: 15px;
     gap: 10px;
   }
 
-  /* Reduz o botão no celular para não bloquear o conteúdo das telas */
   .acessibilidade-btn-principal {
-    width: 60px;
-    height: 60px;
-    font-size: 28px;
+    width: 55px;
+    height: 55px;
+    font-size: 24px;
     border-width: 3px;
   }
 
-  /* Limita o menu à largura da tela do smartphone (com margem de segurança) */
   .acessibilidade-menu {
     max-width: calc(100vw - 30px);
     padding: 12px;
@@ -155,10 +155,36 @@ body.alto-contraste select {
     border-radius: 12px;
   }
 
-  /* Ajusta o texto dos botões internos para caber sem quebrar */
   .acessibilidade-menu button {
-    padding: 10px 12px;
+    padding: 10px;
     font-size: 14px;
-    flex: 1 1 45%;
+    flex: 1 1 100%; /* Empilha os botões para facilitar o toque */
+  }
+}
+
+/* 2. Celulares Maiores e Tablets em pé (de 481px até 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .acessibilidade-container {
+    bottom: 25px;
+    right: 25px;
+    gap: 12px;
+  }
+
+  .acessibilidade-btn-principal {
+    width: 65px;
+    height: 65px;
+    font-size: 30px;
+  }
+
+  .acessibilidade-menu {
+    max-width: 380px;
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .acessibilidade-menu button {
+    padding: 12px 10px;
+    font-size: 15px;
+    flex: 1 1 45%; /* Mantém 2 lado a lado igual no computador */
   }
 }

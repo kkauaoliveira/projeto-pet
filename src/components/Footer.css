@@ -1,3 +1,4 @@
+/* --- ESTILOS BASE (Padrão para telas médias/notebooks) --- */
 .footer-container {
   background-color: var(--cor-primaria);
   color: #ffffff;
@@ -9,3 +10,25 @@
   left: 0;
   font-size: 0.85rem;
 }
+
+/* ==========================================
+   RESPONSIVIDADE PARA TODAS AS TELAS
+========================================== */
+
+/* 1. Celulares Pequenos (até 480px) */
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 0.6rem 0.5rem; /* Diminui a altura para não roubar espaço da tela */
+    font-size: 0.7rem; /* Fonte menorzinha para não quebrar o texto em várias linhas */
+  }
+}
+
+/* 2. Celulares Maiores e Tablets em pé (de 481px até 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .footer-container {
+    padding: 0.8rem;
+    font-size: 0.75rem; 
+  }
+}
+
+/* Telas maiores que 768px já vão usar o padrão ali de cima, que está perfeito! */
