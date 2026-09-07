@@ -29,7 +29,12 @@ export function Login() {
 
       if (resposta.ok) {
         localStorage.setItem('userId', dados.usuario.id);
-        navigate('/perfil'); 
+        
+        if (dados.usuario.funcao_id != 7) {
+          navigate('/gerente');
+        } else {
+          navigate('/perfil');
+        }
       } else {
         setErro(dados.mensagem || 'E-mail ou senha inválidos.');
       }
